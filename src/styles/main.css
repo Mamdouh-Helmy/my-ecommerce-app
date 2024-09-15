@@ -11,6 +11,29 @@
   body{
     font-family: "Public Sans", sans-serif;
   }
+  .btn{
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    padding: 15px 25px;
+    cursor: pointer;
+    margin: 20px 0  ;
+    border: none;
+    outline: none;
+    background-color: #FA8232;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    @media (max-width: 2555px) {
+      padding: 10px 15px;
+      gap: 10px;
+      font-size: 14px;
+    }
+  }
+  
   .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -189,6 +212,162 @@
           display: flex;
           align-items: center;
           gap: 10px;
+        }
+      }
+    }
+  }
+  .widgets{
+    padding: 20px 0;
+    position: relative;
+    .container{
+      display: flex;
+      gap: 20px;
+      @media (max-width: 1277px) {
+        flex-direction: column;
+      }
+      .box{
+        width: 60%;
+        position: relative;
+        @media (max-width: 1277px) {
+          width: 100%;
+        }
+          .contet{
+            max-height: 590px;
+            &:first-child{
+              display: flex;
+              align-items: center;
+              background-color: #F2F4F5;
+              padding: 80px 40px 40px;
+              border-radius: 6px;
+              -webkit-border-radius: 6px;
+              -moz-border-radius: 6px;
+              -ms-border-radius: 6px;
+              -o-border-radius: 6px;
+              @media (max-width: 1277px) {
+                flex-direction: column;
+              }
+            .text{
+              span{
+                display: block;
+                color: #2484C2;
+                font-size: 14px;
+                font-weight: 600;
+                position: relative;
+                padding-left: 30px;
+                &::before{
+                  content: "";
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  background-color: #2DA5F3;
+                  width: 24px;
+                  height: 2px;
+                }
+              }
+              h2{
+                font-weight: 600;
+                color: #191C1F;
+                margin: 10px 0;
+              }
+              p{
+                font-size: 18px;
+                color: #475156;
+                font-weight: 400;
+              }
+            }
+            .image{
+              position: relative;   
+              img{
+                width: 368px;
+                @media (max-width: 1277px) {
+                  width: 120px;
+                }
+              }
+            }
+          }
+        }
+        .dot{
+          position: absolute;
+          bottom: 20px;
+          left: 50px;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          span{
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            background-color: #ADB7BC;
+            cursor: pointer;
+            &.active{
+              background-color: #191C1F;
+            }
+          }
+        }
+        &:last-child{
+          max-height: 590px;
+          width: 40%;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          @media (max-width: 1277px) {
+            width: 100%;
+          }
+          .conteant{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 20px;
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            -ms-border-radius: 6px;
+            -o-border-radius: 6px;
+            @media (max-width: 768px) {
+              flex-direction: column;
+            }
+            &:first-child{
+              background-color: #191C1F;
+              .text{
+                p{
+                  color: #EBC80C;
+                }
+                h5{
+                  color: #FFFFFF;
+                }
+              }
+            }
+            &:last-child{
+              background-color: #F2F4F5;
+              .text{
+                p{
+                  color: #2DA5F3;
+                  margin: 10px 0;
+                  font-size: 18px;
+                }
+              }
+            }
+            .text{
+              p{
+                font-size: 14px;
+              }
+              h5{
+                margin: 25px 0 0;
+                font-weight: bold;
+              }
+            }
+            .images{
+              img{
+                width: 200px;
+              }
+            }
+          }
         }
       }
     }
