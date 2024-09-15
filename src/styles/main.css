@@ -38,4 +38,117 @@
   .nav{
     width: 100%;
     background: #1B6392;
+    padding: 20px;
+    &:first-child{
+      border-bottom: 1px solid #3f7ca3;
+    }
+    .container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+      .text{
+        font-size: 14px;
+        color: #FFFFFF;
+        font-weight: 400;
+        @media (max-width: 768px) {
+          margin-bottom: 10px;
+        }
+      }
+      .left-content{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+        .follow-us{
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding-right: 20px;
+          border-right: 1px solid #3f7ca3;
+          @media (max-width: 768px) {
+            border-right: 0px solid transparent;
+          }
+          span{
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 400;
+          }
+          .icon{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+          }
+        }
+        .drop-down{
+          display: flex;
+          gap: 10px;
+          padding-left: 10px;
+          .language{
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+}
+
+  .nav{
+    .container{
+      .input{
+        width: 60%;
+        background-color: #FFFFFF;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        -o-border-radius: 2px;
+        @media (max-width: 768px) {
+          margin: 10px 0;
+          width: 90%;
+          padding: 8px;
+        }
+        input{
+          border: none;
+          outline: none;
+          width: 100%;
+          padding: 5px;
+          @media (max-width: 768px) {
+            padding: 2px;
+          }
+          &::placeholder{
+            font-size: 14px;
+            font-weight: 400;
+            color: #77878F;
+            font-family: "Public Sans", sans-serif;
+          }
+        }
+        .search{
+          cursor: pointer;
+        }
+      }
+      .icons{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+    }
+  }
+  .bottom-nav{
+    width: 100%;
+    padding: 20px;
   }
