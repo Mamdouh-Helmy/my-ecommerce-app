@@ -1,7 +1,8 @@
+import Topnave from "../Component/Topnave";
 export default function Homepage() {
     return (
-      <div>
-        HomeP Page
-      </div>
+      <>
+        <Topnave/>
+      </>
     );
   }
