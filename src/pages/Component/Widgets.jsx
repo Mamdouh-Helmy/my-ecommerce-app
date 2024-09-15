@@ -1,13 +1,8 @@
 import { ProductsContext } from "../../context/ProductsProvider ";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { ArrowRight } from "../../utils/icons.util";
 export default function Widgets() {
   const { products } = useContext(ProductsContext);
-  useEffect(() => {
-    if (products.length >= 1) {
-      console.log(products);
-    }
-  }, [products]);
   return (
     <div className="widgets">
       <div className="container">
