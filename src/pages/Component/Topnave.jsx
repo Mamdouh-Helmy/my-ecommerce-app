@@ -5,7 +5,7 @@ import {
   Reddit,
   Youtube,
   Instagram,
-  Drodpwon,
+  Drodpwonbottom,
 } from "../../utils/icons.util";
 export default function Topnave() {
   return (
@@ -27,11 +27,11 @@ export default function Topnave() {
           <div className="drop-down">
             <div className="language">
               Eng
-              <Drodpwon />
+              <Drodpwonbottom color="#3f7ca3"/>
             </div>
             <div className="language">
               USD
-              <Drodpwon />
+              <Drodpwonbottom color="#3f7ca3"/>
             </div>
           </div>
         </div>
