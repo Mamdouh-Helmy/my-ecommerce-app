@@ -1,6 +1,7 @@
 import { ProductsContext } from "../../context/ProductsProvider ";
 import { useContext } from "react";
 import { ArrowRight } from "../../utils/icons.util";
+import { Link } from "react-router-dom";
 export default function Widgets() {
   const { products } = useContext(ProductsContext);
   return (
@@ -14,10 +15,12 @@ export default function Widgets() {
               <p>
                 {products.length > 0 ? products[0].description : "Loading..."}
               </p>
-              <button className="btn">
-                Shop Now
-                <ArrowRight />
-              </button>
+              <Link to="/prodets" style={{ textDecoration: "none" }}>
+                <button className="btn">
+                  Shop Now
+                  <ArrowRight />
+                </button>
+              </Link>
             </div>
             <div className="image">
               {products.length > 0 ? (
@@ -37,11 +40,15 @@ export default function Widgets() {
           <div className="conteant">
             <div className="text">
               <p>{products.length > 1 ? products[21].title : "Loading..."}</p>
-              <h5>{products.length > 1 ? products[21].description : "Loading..."}</h5>
-              <button className="btn">
-                Shop Now
-                <ArrowRight />
-              </button>
+              <h5>
+                {products.length > 1 ? products[21].description : "Loading..."}
+              </h5>
+              <Link to="/prodets" style={{ textDecoration: "none" }}>
+                <button className="btn">
+                  Shop Now
+                  <ArrowRight />
+                </button>
+              </Link>
             </div>
             <div className="images">
               {products.length > 1 ? (
@@ -61,11 +68,15 @@ export default function Widgets() {
             </div>
             <div className="text">
               <h2>{products.length > 1 ? products[2].title : "Loading..."}</h2>
-              <p>{products.length > 1 ? `$${products[2].price}`: "Loading..."}</p>
-              <button className="btn">
-                Shop Now
-                <ArrowRight />
-              </button>
+              <p>
+                {products.length > 1 ? `$${products[2].price}` : "Loading..."}
+              </p>
+              <Link to="/prodets" style={{ textDecoration: "none" }}>
+                <button className="btn">
+                  Shop Now
+                  <ArrowRight />
+                </button>
+              </Link>
             </div>
           </div>
         </div>
