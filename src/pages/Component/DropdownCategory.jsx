@@ -32,7 +32,7 @@ export default function DropdownCategory() {
         }}
       >
         <ul>
-          <Link style={{color:"#5F6C72" , textDecoration:"none"}}><li>All</li></Link>
+          <Link to="/prodets" style={{color:"#5F6C72" , textDecoration:"none"}}><li>All</li></Link>
           {categories.slice(0, 10).map((category, index) => (
             <li key={index} onClick={() => handleClick(index)}>
               {category.name}

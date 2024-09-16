@@ -442,3 +442,105 @@
     }
   }
   
+.Product-list{
+  padding: 40px 0;
+  .container{
+    display: flex;
+    gap: 20px;
+    .list-box{
+      &:last-child{
+        flex: 1;
+        display: flex;
+      }
+      .category{
+        color: #191C1F;
+        font-size: 14px;
+        font-weight: 500;
+        margin: 0 0 10px;
+      }
+      ul{
+        li{
+          cursor: pointer;
+          list-style: none;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 0 0  6px 0;
+          input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            border: 2px solid #C9CFD2;
+            border-radius: 50%;
+            background-color: white;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+          }
+          input[type="radio"]:checked {
+            border-color: #FA8232;
+            border-width: 4px;
+            background-color: white;
+        }
+          .text{
+            color: #191C1F;
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+      .box{
+        .prodect-box{
+          display: grid;
+          grid-template-columns: repeat(4, 1fr); 
+        gap: 16px;
+        @media (max-width: 1200px) {
+          grid-template-columns: repeat(2, 1fr); 
+        }
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr; 
+        }
+        .product {
+          border: 1px solid #E4E7E9;
+          padding: 16px;
+          text-align: center;
+          border-radius: 8px;
+          border-radius: 3px;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          -ms-border-radius: 3px;
+          -o-border-radius: 3px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          img{
+            width: 120px;
+          }
+          .text{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+          }
+          h3{
+            color: #191C1F;
+            font-size: 17px;
+            margin: 20px 0 0;
+          }
+          h5{
+            color: #5F6C72;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 10px 0;
+          }
+          p{
+            color: #2DA5F3;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+        }
+      }
+    }
+  }
+}
