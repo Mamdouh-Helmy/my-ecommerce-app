@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { ProductsContext } from "../../context/ProductsProvider ";
 import DropdownCategoryProdect from "./DropdownCategoryProdect";
 import { useState, useContext } from "react";
@@ -31,6 +32,7 @@ export default function DropdownCategory() {
         }}
       >
         <ul>
+          <Link style={{color:"#5F6C72" , textDecoration:"none"}}><li>All</li></Link>
           {categories.slice(0, 10).map((category, index) => (
             <li key={index} onClick={() => handleClick(index)}>
               {category.name}

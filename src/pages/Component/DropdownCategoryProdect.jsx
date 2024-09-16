@@ -18,7 +18,17 @@ const DropdownCategoryProdect = ({ category }) => {
     <div className="dropdown-category-prodect">
       <ul>
         {data.map((product , index) => (
-          <li key={index}>{product.title}</li>
+          <li key={index}>
+              <div className="box">
+                <div className="text">
+                  <span>{product.title}</span>
+                  <span>${product.price}</span>
+                </div>
+                <div className="image">
+                    <img src={product.images} alt="" />
+                </div>
+              </div>
+            </li>
         ))}
       </ul>
     </div>

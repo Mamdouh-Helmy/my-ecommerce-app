@@ -393,25 +393,49 @@
   .dropdown-category-prodect {
     position: absolute;
     left: 200px;
+    overflow: scroll;
+    max-height: 200px;
     top: 0px;
     z-index: 300;
     background-color: #FFFFFF;
     border: 1px solid #E4E7E9; 
     border-radius: 3px; 
-    padding: 10px 30px 10px 10px;
+    padding: 10px ;
     box-shadow: 0 0 0 1px #FFFFFF;
     @media (max-width: 768px) {
       left: 100px;
     }
     ul{
-      min-width: 190px;
+      
       li{
         list-style: none;
-        padding: 10px ;
         font-size: 14px;
         width: 100%;
         display: block;
         cursor: pointer;
+        border-bottom: 1px solid #ADB7BC;
+        .box{
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          .text{
+            span{
+              &:first-child{
+                display: block;
+              }
+              &:last-child{
+                display: block;
+                margin: 10px 0 0;
+                color: #2DA5F3;
+              }
+            }
+          }
+          .image{
+            img{
+              width: 60px;
+            }
+          }
+        }
       }
     }
   }
