@@ -403,7 +403,7 @@
     padding: 10px ;
     box-shadow: 0 0 0 1px #FFFFFF;
     @media (max-width: 768px) {
-      left: 100px;
+      left: 50px;
     }
     ul{
       
