@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Eye, ArrowRight } from "../../utils/icons.util";
 export default function Usears() {
   return (
@@ -22,7 +23,9 @@ export default function Usears() {
             </button>
             <div className="create-account">
                 <span>Don’t have account</span>
-                <button className="btn-create">Create account</button>
+                <Link to="/login">
+                    <button className="btn-create">Create account</button>
+                </Link>
             </div>
         </div>
       </div>
