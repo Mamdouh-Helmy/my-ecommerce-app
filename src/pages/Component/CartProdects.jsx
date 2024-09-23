@@ -1,14 +1,32 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { ArrowRight } from "../../utils/icons.util";
 
 export default function CartProdects({ cart }) {
   const [quantities, setQuantities] = useState({});
+  const [subTotals, setSubTotals] = useState({});
 
   const updateQuantity = (index, value) => {
+    const newQuantity = Math.max(1, (quantities[index] || 1) + value);
+
     setQuantities({
       ...quantities,
-      [index]: Math.max(1, (quantities[index] || 1) + value),
+      [index]: newQuantity,
     });
   };
+
+  useEffect(() => {
+    const newSubTotals = {};
+
+    cart.map((item, index) => {
+      const quantity = quantities[index] || 1;
+      newSubTotals[index] = parseInt((item.price * quantity).toFixed(2));
+    });
+    setSubTotals(newSubTotals);
+  }, [quantities, cart]);
+
+  const total = Object.values(subTotals)
+    .reduce((acc, value) => acc + value, 0)
+    .toFixed(2);
   return (
     <div className="cart">
       <div className="container">
@@ -54,21 +72,48 @@ export default function CartProdects({ cart }) {
                           </button>
                         </div>
                       </td>
-                      <td>
-                        $
-                      {quantities[index] > 0
-                          ? (item.price * (quantities[index] || 0)).toFixed(2)
-                          : item.price.toFixed(2)}
-                      </td>
+                      <td>${subTotals[index] || item.price.toFixed(2)}</td>
                     </tr>
                   ))
                 ) : (
-                  <tr>
-                    <td colSpan="4">No items in the cart</td>
-                  </tr>
+                  <></>
                 )}
               </tbody>
             </table>
+            <div>
+              {cart.length === 0 && (
+                <div className="no-iteams">No items in the cart</div>
+              )}
+            </div>
+          </div>
+          <div className="box">
+            <div className="title">Card Totals</div>
+            <div className="detailes-prodects-price">
+              <div className="text">
+                <span>Sub-total</span>
+                <span>${total}</span>
+              </div>
+              <div className="text">
+                <span>Shipping</span>
+                <span>Free</span>
+              </div>
+              <div className="text">
+                <span>Discount</span>
+                <span>$0</span>
+              </div>
+              <div className="text">
+                <span>Tax</span>
+                <span>$0</span>
+              </div>
+              <div className="text">
+                <span>Total</span>
+                <span>${total}</span>
+              </div>
+            </div>
+            <button>
+              Proceed to Checkout
+              <ArrowRight />
+            </button>
           </div>
         </div>
       </div>
