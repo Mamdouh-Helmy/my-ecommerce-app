@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from "react";
 
 export const ProductsContext = createContext();
 
@@ -11,20 +11,28 @@ export const ProductsProvider = ({ children }) => {
     const isProductInCart = cart.find((item) => item.id === product.id);
 
     if (!isProductInCart) {
-      setCart( [...cart, product]);
+      const updatedCart = [...cart, product];
+      setCart(updatedCart);
+      localStorage.setItem('cart', JSON.stringify(updatedCart));
     }
   };
+  useEffect(() => {
+    fetch("https://dummyjson.com/products")
+      .then((response) => response.json())
+      .then((data) => setProducts(data.products))
+      .catch((error) => console.error("Error:", error));
+
+    fetch("https://dummyjson.com/products/categories")
+      .then((response) => response.json())
+      .then((data) => setCategories(data))
+      .catch((error) => console.error("Error:", error));
+  }, []);
 
   useEffect(() => {
-    fetch('https://dummyjson.com/products')
-      .then(response => response.json())
-      .then(data => setProducts(data.products))
-      .catch(error => console.error('Error:', error));
-    
-    fetch('https://dummyjson.com/products/categories')
-      .then(response => response.json())
-      .then(data => setCategories(data))
-      .catch(error => console.error('Error:', error));
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+      setCart(JSON.parse(savedCart));
+    }
   }, []);
 
   return (

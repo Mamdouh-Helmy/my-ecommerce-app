@@ -574,6 +574,7 @@ body {
       width: 100%;
       display: block;
       cursor: pointer;
+      padding: 10px;
       &:not(:last-child) {
         border-bottom: 1px solid #adb7bc;
       }
@@ -967,6 +968,7 @@ body {
         -ms-border-radius: 4px;
         -o-border-radius: 4px;
         &:first-child{
+          max-height: 300px;
           width: 70%;
           overflow: auto;
           position: relative;
@@ -1073,7 +1075,7 @@ body {
           tbody {
             tr {
               td {
-                padding: 24px;
+                padding: 12px 24px;
                 font-size: 14px;
                 color: #191c1f;
                 .quantity{
@@ -1098,6 +1100,7 @@ body {
                     outline: none;
                     width: 60px;
                     text-align: center;
+                    font-size: 16px;
                   }
                 }
                 &:first-child{
@@ -1106,7 +1109,7 @@ body {
                   gap: 5px;
                   .images{
                     img{
-                      width: 100px;
+                      width: 60px;
                     }
                   }
                 }
