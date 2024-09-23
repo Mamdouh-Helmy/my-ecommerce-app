@@ -172,25 +172,25 @@ export const Search = () => (
   </svg>
 );
 
-export const ShoppingCart = () => (
+export const ShoppingCart = ({color= "white" , size="38"}) => (
   <svg
-    width="38"
-    height="38"
+    width={size}
+    height={size}
     viewBox="0 0 38 38"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M10 35C11.1046 35 12 34.1046 12 33C12 31.8954 11.1046 31 10 31C8.89543 31 8 31.8954 8 33C8 34.1046 8.89543 35 10 35Z"
-      fill="white"
+      fill={color}
     />
     <path
       d="M23 35C24.1046 35 25 34.1046 25 33C25 31.8954 24.1046 31 23 31C21.8954 31 21 31.8954 21 33C21 34.1046 21.8954 35 23 35Z"
-      fill="white"
+      fill={color}
     />
     <path
       d="M5.2875 15H27.7125L24.4125 26.55C24.2948 26.9692 24.0426 27.3381 23.6948 27.6001C23.3471 27.862 22.9229 28.0025 22.4875 28H10.5125C10.0771 28.0025 9.65293 27.862 9.30515 27.6001C8.95738 27.3381 8.70524 26.9692 8.5875 26.55L4.0625 10.725C4.0027 10.5159 3.8764 10.3321 3.70271 10.2012C3.52903 10.0704 3.31744 9.99977 3.1 10H1"
-      stroke="white"
+      stroke={color}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -198,17 +198,17 @@ export const ShoppingCart = () => (
   </svg>
 );
 
-export const Heart = () => (
+export const Heart = ({color= "white" , size="32"}) => (
   <svg
-    width="32"
-    height="32"
+    width={size}
+    height={size}
     viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M16 27C16 27 3.5 20 3.5 11.5C3.5 9.99735 4.02062 8.54112 4.97328 7.37907C5.92593 6.21701 7.25178 5.42091 8.72525 5.12622C10.1987 4.83153 11.7288 5.05645 13.0551 5.76271C14.3814 6.46897 15.4221 7.61294 16 9C16.5779 7.61294 17.6186 6.46897 18.9449 5.76271C20.2712 5.05645 21.8013 4.83153 23.2748 5.12622C24.7482 5.42091 26.0741 6.21701 27.0267 7.37907C27.9794 8.54112 28.5 9.99735 28.5 11.5C28.5 20 16 27 16 27Z"
-      stroke="white"
+      stroke={color}
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -435,24 +435,24 @@ export const ArrowRight = () => (
   </svg>
 );
 
-export const Eye = () => (
+export const Eye = ({color="#191C1F" , size="20"}) => (
   <svg
-    width="20"
-    height="20"
+    width={size}
+    height={size}
     viewBox="0 0 20 20"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
       d="M10 3.54166C3.75 3.54166 1.25 9.99999 1.25 9.99999C1.25 9.99999 3.75 16.4583 10 16.4583C16.25 16.4583 18.75 9.99999 18.75 9.99999C18.75 9.99999 16.25 3.54166 10 3.54166Z"
-      stroke="#191C1F"
+      stroke={color}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />
     <path
       d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
-      stroke="#191C1F"
+      stroke={color}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"

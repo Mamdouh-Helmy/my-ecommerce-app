@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ProductsContext } from "../../context/ProductsProvider ";
 import Usears from "./Usears";
 import {
   Logo,
@@ -7,16 +8,18 @@ import {
   Heart,
   User,
 } from "../../utils/icons.util";
-import { useState } from "react";
+import { useContext, useState } from "react";
 export default function Middlenav() {
+  const { cart } = useContext(ProductsContext);
   const [check, setCheck] = useState(false);
   const handleClick = () => {
     setCheck(!check);
   };
+  // console.log(cart.length)
   return (
     <div className="nav">
       <div className="container">
-        <Link to="/">
+        <Link to="/" style={{textDecoration: "none" , border: "none"}}>
           <div className="logo">
             <Logo />
           </div>
@@ -28,9 +31,12 @@ export default function Middlenav() {
           </div>
         </div>
         <div className="icons">
-          <div className="shoop-cart">
-            <ShoppingCart />
-          </div>
+          <Link to="/cart" style={{textDecoration: "none" , display: "block"}}>
+            <div className="shoop-cart">
+              <span className="count-prodects">{cart.length}</span>
+              <ShoppingCart />
+            </div>
+          </Link>
           <Heart />
           <div className="user" onClick={handleClick}>
             <User />

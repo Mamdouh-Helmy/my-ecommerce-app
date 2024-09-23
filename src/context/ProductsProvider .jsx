@@ -5,6 +5,15 @@ export const ProductsContext = createContext();
 export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [cart, setCart] = useState([]);
+
+  const addToCart = (product) => {
+    const isProductInCart = cart.find((item) => item.id === product.id);
+
+    if (!isProductInCart) {
+      setCart( [...cart, product]);
+    }
+  };
 
   useEffect(() => {
     fetch('https://dummyjson.com/products')
@@ -19,7 +28,7 @@ export const ProductsProvider = ({ children }) => {
   }, []);
 
   return (
-    <ProductsContext.Provider value={{ products, categories }}>
+    <ProductsContext.Provider value={{ products, categories, cart, addToCart }}>
       {children}
     </ProductsContext.Provider>
   );
