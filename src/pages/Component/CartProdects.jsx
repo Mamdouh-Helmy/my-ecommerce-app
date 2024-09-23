@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
-import { ArrowRight } from "../../utils/icons.util";
+import { useState, useEffect, useContext } from "react";
+import { ArrowRight, Remove } from "../../utils/icons.util";
+import { ProductsContext } from "../../context/ProductsProvider "
 
 export default function CartProdects({ cart }) {
+  const { setCart } = useContext(ProductsContext);
   const [quantities, setQuantities] = useState({});
   const [subTotals, setSubTotals] = useState({});
+  const [hoveredIcons, setHoveredIcons] = useState({});
 
   const updateQuantity = (index, value) => {
     const newQuantity = Math.max(1, (quantities[index] || 1) + value);
@@ -12,6 +15,12 @@ export default function CartProdects({ cart }) {
       ...quantities,
       [index]: newQuantity,
     });
+  };
+
+  const removeFromCart = (index) => {
+    const updatedCart = cart.filter((_,cartIndex) => cartIndex !== index);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart)); 
   };
 
   useEffect(() => {
@@ -27,6 +36,14 @@ export default function CartProdects({ cart }) {
   const total = Object.values(subTotals)
     .reduce((acc, value) => acc + value, 0)
     .toFixed(2);
+
+  const handleMouseEnter = (icon) => {
+    setHoveredIcons({ ...hoveredIcons, [icon]: true });
+  };
+
+  const handleMouseLeave = (icon) => {
+    setHoveredIcons({ ...hoveredIcons, [icon]: false });
+  };
   return (
     <div className="cart">
       <div className="container">
@@ -47,6 +64,16 @@ export default function CartProdects({ cart }) {
                   cart.map((item, index) => (
                     <tr key={index}>
                       <td>
+                        <div
+                          className="icons"
+                          onMouseEnter={() => handleMouseEnter(index)}
+                          onMouseLeave={() => handleMouseLeave(index)}
+                          onClick={() => removeFromCart(index)} 
+                        >
+                          <Remove
+                            color={hoveredIcons[index] ? "#EE5858" : "#929FA5"}
+                          />
+                        </div>
                         <div className="images">
                           {<img src={item.thumbnail} alt="Prodects" />}
                         </div>

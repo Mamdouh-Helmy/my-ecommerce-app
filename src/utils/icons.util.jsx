@@ -172,7 +172,7 @@ export const Search = () => (
   </svg>
 );
 
-export const ShoppingCart = ({color= "white" , size="38"}) => (
+export const ShoppingCart = ({ color = "white", size = "38" }) => (
   <svg
     width={size}
     height={size}
@@ -198,7 +198,7 @@ export const ShoppingCart = ({color= "white" , size="38"}) => (
   </svg>
 );
 
-export const Heart = ({color= "white" , size="32"}) => (
+export const Heart = ({ color = "white", size = "32" }) => (
   <svg
     width={size}
     height={size}
@@ -435,7 +435,7 @@ export const ArrowRight = () => (
   </svg>
 );
 
-export const Eye = ({color="#191C1F" , size="20"}) => (
+export const Eye = ({ color = "#191C1F", size = "20" }) => (
   <svg
     width={size}
     height={size}
@@ -452,6 +452,37 @@ export const Eye = ({color="#191C1F" , size="20"}) => (
     />
     <path
       d="M10 12.5C11.3807 12.5 12.5 11.3807 12.5 10C12.5 8.61929 11.3807 7.5 10 7.5C8.61929 7.5 7.5 8.61929 7.5 10C7.5 11.3807 8.61929 12.5 10 12.5Z"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const Remove = ({ color }) => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeMiterlimit="10"
+    />
+    <path
+      d="M15 9L9 15"
+      stroke={color}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M15 15L9 9"
       stroke={color}
       strokeWidth="1.5"
       strokeLinecap="round"

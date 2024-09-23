@@ -967,7 +967,7 @@ body {
         -moz-border-radius: 4px;
         -ms-border-radius: 4px;
         -o-border-radius: 4px;
-        &:first-child{
+        &:first-child {
           max-height: 300px;
           width: 70%;
           overflow: auto;
@@ -975,59 +975,59 @@ body {
           @media (max-width: 768px) {
             width: 100%;
           }
-          .no-iteams{
+          .no-iteams {
             width: 100%;
             text-align: center;
             margin: 80px 0;
-            color: #5F6C72;
+            color: #5f6c72;
             font-size: 18px;
             @media (max-width: 768px) {
               margin: 30px 0;
             }
           }
         }
-        &:last-child{
+        &:last-child {
           width: 30%;
           padding: 20px;
           @media (max-width: 768px) {
             width: 100%;
           }
-          .title{
+          .title {
             font-size: 18px;
             font-weight: 500;
-            color: #191C1F;
+            color: #191c1f;
             margin-bottom: 10px;
           }
-          .detailes-prodects-price{
-            .text{
+          .detailes-prodects-price {
+            .text {
               display: flex;
               align-items: center;
               justify-content: space-between;
               margin: 12px 0;
-              &:last-child{
-                border-top: 1px solid #E4E7E9;
+              &:last-child {
+                border-top: 1px solid #e4e7e9;
                 padding: 12px 0;
-                span{
-                  &:first-child{
-                    color: #191C1F;
+                span {
+                  &:first-child {
+                    color: #191c1f;
                     font-size: 16px;
                   }
                 }
               }
-              span{
+              span {
                 font-size: 14px;
                 font-weight: 400;
-                &:first-child{
-                  color: #5F6C72;
+                &:first-child {
+                  color: #5f6c72;
                 }
-                &:last-child{
-                  color: #191C1F;
+                &:last-child {
+                  color: #191c1f;
                 }
               }
             }
           }
-          button{
-            background-color: #FA8232;
+          button {
+            background-color: #fa8232;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -1039,12 +1039,12 @@ body {
             padding: 15px 32px;
             outline: none;
             border: none;
-            color: #FFFFFF;
+            color: #ffffff;
             width: 100%;
             justify-content: center;
             font-size: 16px;
             cursor: pointer;
-}
+          }
         }
         @media (max-width: 768px) {
           overflow-x: scroll;
@@ -1052,7 +1052,7 @@ body {
         table {
           width: 100%;
           border-collapse: collapse;
-          
+
           caption {
             text-align: left;
             background-color: #ffffff;
@@ -1078,24 +1078,24 @@ body {
                 padding: 12px 24px;
                 font-size: 14px;
                 color: #191c1f;
-                .quantity{
+                .quantity {
                   display: flex;
                   align-items: center;
                   justify-content: space-between;
-                  border: 1px solid #E4E7E9;
+                  border: 1px solid #e4e7e9;
                   padding: 12px 20px;
                   border-radius: 3px;
                   -webkit-border-radius: 3px;
                   -moz-border-radius: 3px;
                   -ms-border-radius: 3px;
                   -o-border-radius: 3px;
-                  button{
+                  button {
                     border: none;
                     background-color: transparent;
-                    color: #929FA5;
+                    color: #929fa5;
                     cursor: pointer;
                   }
-                  input{
+                  input {
                     border: none;
                     outline: none;
                     width: 60px;
@@ -1103,12 +1103,15 @@ body {
                     font-size: 16px;
                   }
                 }
-                &:first-child{
+                &:first-child {
                   display: flex;
                   align-items: center;
                   gap: 5px;
-                  .images{
-                    img{
+                  .icons{
+                    cursor: pointer;
+                  }
+                  .images {
+                    img {
                       width: 60px;
                     }
                   }
@@ -1118,8 +1121,7 @@ body {
                   color: #475156;
                 }
               }
-             
-}
+            }
           }
         }
       }
