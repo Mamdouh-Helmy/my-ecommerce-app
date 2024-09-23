@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { ArrowRight, Remove } from "../../utils/icons.util";
-import { ProductsContext } from "../../context/ProductsProvider "
+import { ProductsContext } from "../../context/ProductsProvider ";
 
 export default function CartProdects({ cart }) {
   const { setCart } = useContext(ProductsContext);
@@ -8,19 +8,28 @@ export default function CartProdects({ cart }) {
   const [subTotals, setSubTotals] = useState({});
   const [hoveredIcons, setHoveredIcons] = useState({});
 
+  useEffect(() => {
+    const storedQuantities =
+      JSON.parse(localStorage.getItem("quantities")) || {};
+    setQuantities(storedQuantities);
+  }, []);
+
   const updateQuantity = (index, value) => {
     const newQuantity = Math.max(1, (quantities[index] || 1) + value);
 
-    setQuantities({
+    const newQuantities = {
       ...quantities,
       [index]: newQuantity,
-    });
+    };
+
+    setQuantities(newQuantities);
+    localStorage.setItem("quantities", JSON.stringify(newQuantities));
   };
 
   const removeFromCart = (index) => {
-    const updatedCart = cart.filter((_,cartIndex) => cartIndex !== index);
+    const updatedCart = cart.filter((_, cartIndex) => cartIndex !== index);
     setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart)); 
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   useEffect(() => {
@@ -68,7 +77,7 @@ export default function CartProdects({ cart }) {
                           className="icons"
                           onMouseEnter={() => handleMouseEnter(index)}
                           onMouseLeave={() => handleMouseLeave(index)}
-                          onClick={() => removeFromCart(index)} 
+                          onClick={() => removeFromCart(index)}
                         >
                           <Remove
                             color={hoveredIcons[index] ? "#EE5858" : "#929FA5"}
