@@ -1423,10 +1423,7 @@ a {
           -o-border-radius: 3px;
         }
         &:not(:last-child) {
-          border-right: 2px solid #e4e7e9;
-          @media (max-width: 768px) {
-            border-right: 1px solid #e4e7e9;
-          }
+          border-right: 1px solid #e4e7e9;
         }
         .tex {
           span {
@@ -1436,13 +1433,57 @@ a {
               font-size: 12px;
             }
             &:first-child {
-              color: #191C1F;
+              color: #191c1f;
             }
             &:last-child {
-              color: #5F6C72;
+              color: #5f6c72;
               margin-top: 5px;
             }
           }
+        }
+      }
+    }
+  }
+}
+.today-best-deals {
+  padding: 60px 0;
+  .container {
+    .Content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .text {
+        color: #191c1f;
+        font-size: 24;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .timear {
+          font-size: 14px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          .timera-prodects {
+            background-color: #f3de6d;
+            padding: 10px;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+            font-size: 12px;
+            font-weight: 700;
+          }
+        }
+      }
+      a {
+        .all-prodects {
+          font-size: 14px;
+          color: #2da5f3;
+          display: block;
+          display: flex;
+          align-items: center;
+          gap: 6px;
         }
       }
     }
