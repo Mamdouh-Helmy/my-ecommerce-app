@@ -1206,11 +1206,43 @@ button {
         &:first-child {
           width: 100%;
           .images {
+            max-width: 100%;
             .imge {
               width: 200px;
               margin: 0 auto;
               img {
                 max-width: 100%;
+              }
+            }
+            .all-images{
+              display: flex;
+              align-items: center;
+              gap: 20px;
+              overflow-x: auto;
+              width: 600px;
+              border-radius: 3px;
+              -webkit-border-radius: 3px;
+              -moz-border-radius: 3px;
+              -ms-border-radius: 3px;
+              -o-border-radius: 3px;
+              @media (max-width: 1023px) {
+                width: 400px;
+              }
+              @media (max-width: 768px) {
+                width: 100%;
+              }
+              img{
+                width: 100px;
+                border: 2px solid #e4e7e9;
+                border-radius: 2px;
+                -webkit-border-radius: 2px;
+                -moz-border-radius: 2px;
+                -ms-border-radius: 2px;
+                -o-border-radius: 2px;
+                cursor: pointer;
+                &.active{
+                  border: 2px solid #FA8232;
+                }
               }
             }
           }

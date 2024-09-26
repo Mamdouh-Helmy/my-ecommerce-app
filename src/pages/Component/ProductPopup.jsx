@@ -1,10 +1,11 @@
 import StarRating from "./StarRating";
 import { ShoppingCart } from "../../utils/icons.util";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ProductsContext } from "../../context/ProductsProvider ";
 
 const ProductPopup = ({ product, onClose }) => {
   const { cart, addToCart } = useContext(ProductsContext);
+  const [indexImages , setIndexImages] = useState(0)
 
   const isProductInCart = cart.some((cartItem) => cartItem.id === product.id);
 
@@ -13,7 +14,10 @@ const ProductPopup = ({ product, onClose }) => {
       addToCart(product);
     }
   };
-//   console.log(product);
+  
+  const handelIndexImages = (index) => {
+    setIndexImages(index)
+  }
   return (
     <div className="pop">
       <div className="box-pop">
@@ -22,7 +26,15 @@ const ProductPopup = ({ product, onClose }) => {
           <div className="box">
             <div className="images">
               <div className="imge">
-                <img src={product.thumbnail} alt={product.title} />
+                <img src={product.images[indexImages]} alt={product.title} />
+              </div>
+              <div className="all-images">
+                {product.images &&
+                  product.images.map((image, index) => (
+                    <div key={index} onClick={() => handelIndexImages(index)}>
+                        <img src={image} alt={product.title} className={`${index == indexImages ? "box-images active" : "box-images"}`}/>
+                    </div>
+                  ))}
               </div>
             </div>
           </div>
