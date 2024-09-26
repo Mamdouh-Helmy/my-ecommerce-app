@@ -4,7 +4,7 @@ import { ArrowRight } from "../../utils/icons.util";
 import { Link } from "react-router-dom";
 
 export default function Widgets() {
-  const { products, categoriesLaptop } = useContext(ProductsContext);
+  const { categoriesLaptop } = useContext(ProductsContext);
   const [count, setCount] = useState(0);
   const intervalRef = useRef(null);
   
@@ -15,12 +15,6 @@ export default function Widgets() {
 
     return () => clearInterval(intervalRef.current);
   }, []);
-
-  // useEffect(() => {
-  //   if (categoriesLaptop && categoriesLaptop.products) {
-  //     console.log(categoriesLaptop.products[0]);
-  //   }
-  // }, [categoriesLaptop]);
 
   const handleClickDot = (index) => {
     setCount(index);
