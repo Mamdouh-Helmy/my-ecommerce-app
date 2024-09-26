@@ -12,6 +12,7 @@ export const ProductsProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [hoveredIcons, setHoveredIcons] = useState({});
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const addToCart = (product) => {
     const isProductInCart = cart.find((item) => item.id === product.id);
@@ -19,7 +20,7 @@ export const ProductsProvider = ({ children }) => {
     if (!isProductInCart) {
       const updatedCart = [...cart, product];
       setCart(updatedCart);
-      localStorage.setItem('cart', JSON.stringify(updatedCart));
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
     }
   };
   useEffect(() => {
@@ -66,12 +67,29 @@ export const ProductsProvider = ({ children }) => {
     }
   }, [DataUrl, products]);
 
-  
-
   return (
-    <ProductsContext.Provider value={{ products, categories, cart, addToCart, setCart , setCategoriesProdects , categorieProdects , setCategoriesData , categoriesData , loading , error , hoveredIcons , setHoveredIcons , selectedProduct , setSelectedProduct}}>
+    <ProductsContext.Provider
+      value={{
+        products,
+        categories,
+        cart,
+        addToCart,
+        setCart,
+        setCategoriesProdects,
+        categorieProdects,
+        setCategoriesData,
+        categoriesData,
+        loading,
+        error,
+        hoveredIcons,
+        setHoveredIcons,
+        selectedProduct,
+        setSelectedProduct,
+        selectedCategory,
+        setSelectedCategory,
+      }}
+    >
       {children}
     </ProductsContext.Provider>
   );
-  
 };

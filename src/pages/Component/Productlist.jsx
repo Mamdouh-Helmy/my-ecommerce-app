@@ -3,8 +3,7 @@ import { ProductsContext } from "../../context/ProductsProvider ";
 import ProdectsByCategory from "./ProdectsByCategory";
 
 export default function Productlist() {
-  const { categories , setCategoriesProdects } = useContext(ProductsContext);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const { categories , setCategoriesProdects , setSelectedCategory , selectedCategory} = useContext(ProductsContext);
 
   const handleSelectCategory = (category) => {
     if (selectedCategory === category) {
