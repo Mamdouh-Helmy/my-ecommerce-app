@@ -6,6 +6,7 @@ export const ProductsProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [categorieProdects, setCategoriesProdects] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [categoriesLaptop, setCategoriesLaptop] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -32,6 +33,11 @@ export const ProductsProvider = ({ children }) => {
     fetch("https://dummyjson.com/products/categories")
       .then((response) => response.json())
       .then((data) => setCategories(data))
+      .catch((error) => console.error("Error:", error));
+
+      fetch("https://dummyjson.com/products/category/laptops")
+      .then((response) => response.json())
+      .then((data) => setCategoriesLaptop(data))
       .catch((error) => console.error("Error:", error));
   }, []);
 
@@ -87,6 +93,7 @@ export const ProductsProvider = ({ children }) => {
         setSelectedProduct,
         selectedCategory,
         setSelectedCategory,
+        categoriesLaptop,
       }}
     >
       {children}
