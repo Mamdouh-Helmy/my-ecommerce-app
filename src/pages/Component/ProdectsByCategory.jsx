@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext} from "react";
 import { ProductsContext } from "../../context/ProductsProvider ";
 import { ShoppingCart, Eye, Heart } from "../../utils/icons.util";
 import StarRating from "./StarRating";
