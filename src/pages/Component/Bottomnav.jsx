@@ -7,7 +7,10 @@ import {
   Headphones,
   Info,
   PhoneCall,
+  Home,
+  Prodects,
 } from "../../utils/icons.util";
+import { Link } from "react-router-dom";
 export default function Bottomnav() {
   const [check, setCheck] = useState(false);
   const handleClick = () => {
@@ -18,6 +21,18 @@ export default function Bottomnav() {
       <div className="container">
         {check && <DropdownCategory />}
         <div className="left-side">
+          <Link to="/">
+            <div className="box">
+              <Home />
+              Home
+            </div>
+          </Link>
+          <Link to="/prodets">
+            <div className="box">
+              <Prodects />
+              Prodects
+            </div>
+          </Link>
           <div
             className="box"
             style={{ cursor: "pointer" }}

@@ -15,7 +15,7 @@ export default function Widgets() {
               <p>
                 {products.length > 0 ? products[0].description : "Loading..."}
               </p>
-              <Link to="/prodets" style={{ textDecoration: "none" }}>
+              <Link to="/prodets">
                 <button className="btn">
                   Shop Now
                   <ArrowRight />
@@ -43,7 +43,7 @@ export default function Widgets() {
               <h5>
                 {products.length > 1 ? products[21].description : "Loading..."}
               </h5>
-              <Link to="/prodets" style={{ textDecoration: "none" }}>
+              <Link to="/prodets">
                 <button className="btn">
                   Shop Now
                   <ArrowRight />
@@ -71,7 +71,7 @@ export default function Widgets() {
               <p>
                 {products.length > 1 ? `$${products[2].price}` : "Loading..."}
               </p>
-              <Link to="/prodets" style={{ textDecoration: "none" }}>
+              <Link to="/prodets">
                 <button className="btn">
                   Shop Now
                   <ArrowRight />

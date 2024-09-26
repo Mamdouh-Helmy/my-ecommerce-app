@@ -32,7 +32,7 @@ export default function DropdownCategory() {
         }}
       >
         <ul>
-          <Link to="/prodets" style={{ color: "#5F6C72", textDecoration: "none" }}>
+          <Link to="/prodets" style={{ color: "#5F6C72"}}>
             <li>All</li>
           </Link>
           {categories.map((category, index) => (

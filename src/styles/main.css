@@ -49,7 +49,9 @@ body {
 button {
   font-family: "Public Sans", sans-serif;
 }
-
+a{
+  text-decoration: none;
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -360,7 +362,7 @@ button {
     .left-side {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 15px;
       @media (max-width: 768px) {
         flex-direction: column;
         align-items: flex-start;
@@ -371,7 +373,7 @@ button {
         color: #5f6c72;
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
       }
     }
     .right-side {
@@ -1137,21 +1139,21 @@ button {
 
 .pop {
   position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    padding: 10px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.251);
-    z-index: 400;
-    max-height: 80%;  
-    overflow-y: auto;  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.251);
+  z-index: 400;
+  max-height: 80%;
+  overflow-y: auto;
   .box-pop {
     background-color: #ffffff;
     padding: 20px;
@@ -1160,7 +1162,7 @@ button {
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
-    
+
     @media (max-width: 768px) {
       top: 60px;
     }
@@ -1214,7 +1216,7 @@ button {
                 max-width: 100%;
               }
             }
-            .all-images{
+            .all-images {
               display: flex;
               align-items: center;
               gap: 20px;
@@ -1231,7 +1233,7 @@ button {
               @media (max-width: 768px) {
                 width: 100%;
               }
-              img{
+              img {
                 width: 100px;
                 height: 100px;
                 border: 2px solid #e4e7e9;
@@ -1245,8 +1247,8 @@ button {
                   width: 80px;
                   height: 80px;
                 }
-                &.active{
-                  border: 2px solid #FA8232;
+                &.active {
+                  border: 2px solid #fa8232;
                 }
               }
             }
