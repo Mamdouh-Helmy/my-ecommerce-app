@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "../../utils/icons.util";
+import CountdownTimer from "./CountdownTimer";
 export default function TodayBestDeals() {
   return (
     <div className="today-best-deals">
@@ -9,7 +10,7 @@ export default function TodayBestDeals() {
             Best Deals
             <div className="timear">
               Deals ends in
-              <div className="timera-prodects">12d : 21h : 57m : 23s</div>
+              <CountdownTimer/>
             </div>
           </div>
           <Link to="/prodets">
