@@ -1162,7 +1162,7 @@ button {
     -ms-border-radius: 4px;
     -o-border-radius: 4px;
     @media (max-width: 768px) {
-      top: 100px;
+      top: 60px;
     }
     @media (max-width: 320px) {
       top: 10px;
