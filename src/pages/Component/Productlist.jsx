@@ -3,7 +3,7 @@ import { ProductsContext } from "../../context/ProductsProvider ";
 import ProdectsByCategory from "./ProdectsByCategory";
 
 export default function Productlist() {
-  const { categories } = useContext(ProductsContext);
+  const { categories , setCategoriesProdects } = useContext(ProductsContext);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleSelectCategory = (category) => {
@@ -11,6 +11,7 @@ export default function Productlist() {
       setSelectedCategory(null); 
     } else {
       setSelectedCategory(category); 
+      setCategoriesProdects(category)
     }
   };
 
@@ -65,7 +66,7 @@ export default function Productlist() {
           </ul>
         </div>
         <div className="list-box">
-          <ProdectsByCategory category={selectedCategory} />
+          <ProdectsByCategory/>
         </div>
       </div>
     </div>

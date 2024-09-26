@@ -1140,8 +1140,7 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
-    /* max-width: 600px; */
+    width: 90%;
     padding: 10px;
     border-radius: 10px;
     -webkit-border-radius: 10px;

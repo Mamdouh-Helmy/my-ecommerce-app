@@ -4,38 +4,9 @@ import { ShoppingCart, Eye, Heart } from "../../utils/icons.util";
 import StarRating from "./StarRating";
 import ProductPopup from "./ProductPopup";
 
-export default function ProdectsByCategory({ category }) {
-  const { products, addToCart, cart } = useContext(ProductsContext);
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [hoveredIcons, setHoveredIcons] = useState({});
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const DataUrl = category?.url;
-  useEffect(() => {
-    if (DataUrl) {
-      fetch(DataUrl)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          setData(data.products || []);
-          setLoading(false);
-        })
-        .catch((error) => {
-          console.error("Error fetching data:", error);
-          setError(error);
-          setLoading(false);
-        });
-    } else {
-      setData(products);
-      setLoading(false);
-    }
-  }, [DataUrl, products]);
+export default function ProdectsByCategory() {
+  const { addToCart, cart, categorieProdects , categoriesData , loading , error , setHoveredIcons , hoveredIcons , selectedProduct , setSelectedProduct} = useContext(ProductsContext);
+  console.log("one",categorieProdects)
 
   if (loading) {
     return <div>Loading...</div>;
@@ -64,8 +35,8 @@ export default function ProdectsByCategory({ category }) {
   return (
     <div className="box">
       <div className="prodect-box">
-        {data.length > 0 ? (
-          data.map((product, index) => {
+        {categoriesData.length > 0 ? (
+          categoriesData.map((product, index) => {
             const isProductInCart = cart.some(
               (cartItem) => cartItem.id === product.id
             );
