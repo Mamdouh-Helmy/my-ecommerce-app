@@ -5,8 +5,7 @@ import StarRating from "./StarRating";
 import ProductPopup from "./ProductPopup";
 
 export default function ProdectsByCategory() {
-  const { addToCart, cart, categorieProdects , categoriesData , loading , error , setHoveredIcons , hoveredIcons , selectedProduct , setSelectedProduct} = useContext(ProductsContext);
-  console.log("one",categorieProdects)
+  const { addToCart, cart , categoriesData , loading , error , setHoveredIcons , hoveredIcons , selectedProduct , setSelectedProduct} = useContext(ProductsContext);
 
   if (loading) {
     return <div>Loading...</div>;
