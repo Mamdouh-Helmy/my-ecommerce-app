@@ -1241,6 +1241,10 @@ button {
                 -ms-border-radius: 2px;
                 -o-border-radius: 2px;
                 cursor: pointer;
+                @media (max-width: 768px) {
+                  width: 80px;
+                  height: 90px;
+                }
                 &.active{
                   border: 2px solid #FA8232;
                 }
