@@ -6,7 +6,6 @@ import ProductPopup from "./ProductPopup";
 
 export default function ProdectsByCategory() {
   const { addToCart, cart , categoriesData , loading , error , setHoveredIcons , hoveredIcons , selectedProduct , setSelectedProduct} = useContext(ProductsContext);
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -39,7 +38,6 @@ export default function ProdectsByCategory() {
             const isProductInCart = cart.some(
               (cartItem) => cartItem.id === product.id
             );
-
             return (
               <div key={index} className="product">
                 <img src={product.thumbnail} alt={product.title} />

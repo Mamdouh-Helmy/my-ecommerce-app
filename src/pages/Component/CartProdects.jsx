@@ -2,8 +2,8 @@ import { useState, useEffect, useContext } from "react";
 import { ArrowRight, Remove } from "../../utils/icons.util";
 import { ProductsContext } from "../../context/ProductsProvider";
 
-export default function CartProdects({ cart }) {
-  const { setCart } = useContext(ProductsContext);
+export default function CartProdects() {
+  const { setCart, cart } = useContext(ProductsContext);
   const [quantities, setQuantities] = useState({});
   const [subTotals, setSubTotals] = useState({});
   const [hoveredIcons, setHoveredIcons] = useState({});
@@ -69,7 +69,7 @@ export default function CartProdects({ cart }) {
                 </tr>
               </thead>
               <tbody>
-                {cart && cart.length > 0 ? (
+                {Array.isArray(cart) && cart.length > 0 ? (
                   cart.map((item, index) => (
                     <tr key={index}>
                       <td>

@@ -7,6 +7,7 @@ export const ProductsProvider = ({ children }) => {
   const [categorieProdects, setCategoriesProdects] = useState([]);
   const [categories, setCategories] = useState([]);
   const [categoriesLaptop, setCategoriesLaptop] = useState([]);
+  const [categoriesMobileAccessories, setCategoriesMobileAccessories] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -20,14 +21,18 @@ export const ProductsProvider = ({ children }) => {
   });
 
   const addToCart = (product) => {
-    const isProductInCart = cart.find((item) => item.id === product.id);
-
-    if (!isProductInCart) {
-      const updatedCart = [...cart, product];
-      setCart(updatedCart);
-      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    if (!Array.isArray(cart)) {
+      setCart([product]); 
+    } else {
+      const isProductInCart = cart.find((item) => item.id === product.id);
+      if (!isProductInCart) {
+        const updatedCart = [...cart, product];
+        setCart(updatedCart);
+        localStorage.setItem("cart", JSON.stringify(updatedCart));
+      }
     }
   };
+  
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((response) => response.json())
@@ -43,12 +48,29 @@ export const ProductsProvider = ({ children }) => {
       .then((response) => response.json())
       .then((data) => setCategoriesLaptop(data))
       .catch((error) => console.error("Error:", error));
+
+      fetch("https://dummyjson.com/products/category/mobile-accessories")
+      .then((response) => response.json())
+      .then((data) => setCategoriesMobileAccessories(data))
+      .catch((error) => console.error("Error:", error));
   }, []);
 
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
-      setCart(JSON.parse(savedCart));
+      try {
+        const parsedCart = JSON.parse(savedCart);
+        if (Array.isArray(parsedCart)) {
+          setCart(parsedCart);
+        } else {
+          setCart([]); 
+        }
+      } catch (error) {
+        console.error("Error parsing cart from localStorage:", error);
+        setCart([]); 
+      }
+    } else {
+      setCart([]); 
     }
   }, []);
 
@@ -103,7 +125,9 @@ export const ProductsProvider = ({ children }) => {
         setSelectedCategory,
         categoriesLaptop,
         setTimer,
-        timear
+        timear,
+        setCategoriesMobileAccessories,
+        categoriesMobileAccessories,
       }}
     >
       {children}
