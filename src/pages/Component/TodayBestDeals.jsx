@@ -63,11 +63,12 @@ export default function TodayBestDeals() {
 
         <div className="product">
           <div className="box-products">
-            {categoriesMobileAccessories?.products &&
-            categoriesMobileAccessories.products.length > 0 ? (
-              categoriesMobileAccessories.products
-                .slice(0, 1)
-                .map((product, index) => (
+            {categoriesMobileAccessories?.products?.length > 0 ? (
+              categoriesMobileAccessories.products.slice(0, 1).map((product, index) => {
+                const isProductInCart = cart.some(
+                  (cartItem) => cartItem.id === product.id
+                );
+                return (
                   <div key={index}>
                     <div className="images">
                       <img src={product.thumbnail} alt={product.title} />
@@ -91,6 +92,12 @@ export default function TodayBestDeals() {
                       <button
                         className="btn"
                         onClick={() => addToCart(product)}
+                        style={{
+                          cursor: `${isProductInCart ? "no-drop" : "pointer"}`,
+                          pointerEvents: `${isProductInCart ? "none" : "all"}`,
+                          opacity: `${isProductInCart ? "0.5" : "1"}`,
+                        }}
+                        disabled={isProductInCart}
                       >
                         <ShoppingCart /> Add to cart
                       </button>
@@ -99,109 +106,77 @@ export default function TodayBestDeals() {
                       </button>
                     </div>
                   </div>
-                ))
+                );
+              })
             ) : (
-              <div>Loading...</div>
+              <div>No products available</div>
             )}
           </div>
 
           <div className="box-all-products">
             <div className="prodects-boxs">
-              {categoriesMobileAccessories?.products &&
-              categoriesMobileAccessories.products.length > 0 ? (
-                categoriesMobileAccessories.products
-                  .slice(1, 9)
-                  .map((product, index) => {
-                    const isProductInCart = cart.some(
-                      (cartItem) => cartItem.id === product.id
-                    );
+              {categoriesMobileAccessories?.products?.length > 0 ? (
+                categoriesMobileAccessories.products.slice(1, 9).map((product, index) => {
+                  const isProductInCart = cart.some(
+                    (cartItem) => cartItem.id === product.id
+                  );
 
-                    return (
-                      <div key={index} className="box">
-                        <div className="images">
-                          <img src={product.thumbnail} alt={product.title} />
-                        </div>
-                        <div className="count">
-                          <StarRating rating={product.rating} />
-                          <span className="count-prodect">
-                            ({product.stock})
-                          </span>
-                        </div>
-                        <div className="text">
-                          <h3>{product.title}</h3>
-                          <p>${product.price}</p>
-                        </div>
-                        <div className="button">
-                          <button
-                            onMouseEnter={() =>
-                              handleMouseEnter("heart-" + index)
-                            }
-                            onMouseLeave={() =>
-                              handleMouseLeave("heart-" + index)
-                            }
-                          >
-                            <Heart
-                              className="icon"
-                              color={
-                                hoveredIcons["heart-" + index]
-                                  ? "#FFFFFF"
-                                  : "#191C1F"
-                              }
-                              size="20"
-                            />
-                          </button>
-                          <button
-                            onMouseEnter={() =>
-                              handleMouseEnter("cart-" + index)
-                            }
-                            onMouseLeave={() =>
-                              handleMouseLeave("cart-" + index)
-                            }
-                            onClick={() => addToCart(product)}
-                            style={{
-                              cursor: `${
-                                isProductInCart ? "no-drop" : "pointer"
-                              }`,
-                              pointerEvents: `${
-                                isProductInCart ? "none" : "all"
-                              }`,
-                              opacity: `${isProductInCart ? "0.5" : "1"}`,
-                            }}
-                            disabled={isProductInCart}
-                          >
-                            <ShoppingCart
-                              color={
-                                hoveredIcons["cart-" + index]
-                                  ? "#FFFFFF"
-                                  : "#191C1F"
-                              }
-                              size="20"
-                            />
-                          </button>
-                          <button
-                            onMouseEnter={() =>
-                              handleMouseEnter("eye-" + index)
-                            }
-                            onMouseLeave={() =>
-                              handleMouseLeave("eye-" + index)
-                            }
-                            onClick={() => openPopup(product)}
-                          >
-                            <div className="deatiles-prodects">
-                              <Eye
-                                size="20"
-                                color={
-                                  hoveredIcons["eye-" + index]
-                                    ? "#FFFFFF"
-                                    : "#191C1F"
-                                }
-                              />
-                            </div>
-                          </button>
-                        </div>
+                  return (
+                    <div key={index} className="box">
+                      <div className="images">
+                        <img src={product.thumbnail} alt={product.title} />
                       </div>
-                    );
-                  })
+                      <div className="count">
+                        <StarRating rating={product.rating} />
+                        <span className="count-prodect">({product.stock})</span>
+                      </div>
+                      <div className="text">
+                        <h3>{product.title}</h3>
+                        <p>${product.price}</p>
+                      </div>
+                      <div className="button">
+                        <button
+                          onMouseEnter={() => handleMouseEnter("heart-" + index)}
+                          onMouseLeave={() => handleMouseLeave("heart-" + index)}
+                        >
+                          <Heart
+                            className="icon"
+                            color={hoveredIcons["heart-" + index] ? "#FFFFFF" : "#191C1F"}
+                            size="20"
+                          />
+                        </button>
+                        <button
+                          onMouseEnter={() => handleMouseEnter("cart-" + index)}
+                          onMouseLeave={() => handleMouseLeave("cart-" + index)}
+                          onClick={() => addToCart(product)}
+                          style={{
+                            cursor: `${isProductInCart ? "no-drop" : "pointer"}`,
+                            pointerEvents: `${isProductInCart ? "none" : "all"}`,
+                            opacity: `${isProductInCart ? "0.5" : "1"}`,
+                          }}
+                          disabled={isProductInCart}
+                        >
+                          <ShoppingCart
+                            color={hoveredIcons["cart-" + index] ? "#FFFFFF" : "#191C1F"}
+                            size="20"
+                          />
+                        </button>
+                        <button
+                          onMouseEnter={() => handleMouseEnter("eye-" + index)}
+                          onMouseLeave={() => handleMouseLeave("eye-" + index)}
+                          onClick={() => openPopup(product)}
+                        >
+                          <div className="deatiles-prodects">
+                            <Eye
+                              size="20"
+                              color={hoveredIcons["eye-" + index] ? "#FFFFFF" : "#191C1F"}
+                            />
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+                  );
+                })
               ) : (
                 <div>No products available</div>
               )}
@@ -209,9 +184,7 @@ export default function TodayBestDeals() {
           </div>
         </div>
       </div>
-      {selectedProduct && (
-        <ProductPopup product={selectedProduct} onClose={closePopup} />
-      )}
+      {selectedProduct && <ProductPopup product={selectedProduct} onClose={closePopup} />}
     </div>
   );
 }
