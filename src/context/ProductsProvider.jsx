@@ -14,6 +14,10 @@ export const ProductsProvider = ({ children }) => {
   const [hoveredIcons, setHoveredIcons] = useState({});
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [timear , setTimer] = useState(() => {
+    const savedTime = localStorage.getItem("timear");
+    return savedTime ? JSON.parse(savedTime) : [];
+  });
 
   const addToCart = (product) => {
     const isProductInCart = cart.find((item) => item.id === product.id);
@@ -72,6 +76,10 @@ export const ProductsProvider = ({ children }) => {
       setLoading(false);
     }
   }, [DataUrl, products]);
+  
+  useEffect(() => {
+    localStorage.setItem("timear", JSON.stringify(timear));
+  }, [timear])
 
   return (
     <ProductsContext.Provider
@@ -94,6 +102,8 @@ export const ProductsProvider = ({ children }) => {
         selectedCategory,
         setSelectedCategory,
         categoriesLaptop,
+        setTimer,
+        timear
       }}
     >
       {children}

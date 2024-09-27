@@ -1,7 +1,7 @@
 import StarRating from "./StarRating";
 import { ShoppingCart } from "../../utils/icons.util";
 import { useContext, useState } from "react";
-import { ProductsContext } from "../../context/ProductsProvider ";
+import { ProductsContext } from "../../context/ProductsProvider";
 
 const ProductPopup = ({ product, onClose }) => {
   const { cart, addToCart } = useContext(ProductsContext);

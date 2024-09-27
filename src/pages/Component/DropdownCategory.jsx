@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ProductsContext } from "../../context/ProductsProvider ";
+import { ProductsContext } from "../../context/ProductsProvider";
 import DropdownCategoryProdect from "./DropdownCategoryProdect";
 import { useState, useContext } from "react";
 

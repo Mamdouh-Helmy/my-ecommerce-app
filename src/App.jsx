@@ -1,5 +1,5 @@
 import Router from './router'; 
-import { ProductsProvider } from './context/ProductsProvider '; 
+import { ProductsProvider } from './context/ProductsProvider'; 
 
 function App() {
   return (

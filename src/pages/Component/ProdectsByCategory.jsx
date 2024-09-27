@@ -1,5 +1,5 @@
 import { useContext} from "react";
-import { ProductsContext } from "../../context/ProductsProvider ";
+import { ProductsContext } from "../../context/ProductsProvider";
 import { ShoppingCart, Eye, Heart } from "../../utils/icons.util";
 import StarRating from "./StarRating";
 import ProductPopup from "./ProductPopup";

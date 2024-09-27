@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { ProductsContext } from "../../context/ProductsProvider ";
+import { ProductsContext } from "../../context/ProductsProvider";
 import ProdectsByCategory from "./ProdectsByCategory";
 
 export default function Productlist() {

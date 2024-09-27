@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ProductsContext } from "../../context/ProductsProvider ";
+import { ProductsContext } from "../../context/ProductsProvider";
 import Topnave from "../Component/Topnave";
 import Middlenav from "../Component/Middlenav";
 import Bottomnav from "../Component/Bottomnav";

@@ -1,4 +1,4 @@
-import { ProductsContext } from "../../context/ProductsProvider ";
+import { ProductsContext } from "../../context/ProductsProvider";
 import { useContext, useEffect, useState } from "react";
 import { ArrowRight } from "../../utils/icons.util";
 import { Link } from "react-router-dom";

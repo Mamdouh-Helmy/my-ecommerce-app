@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ProductsContext } from "../../context/ProductsProvider ";
+import { ProductsContext } from "../../context/ProductsProvider";
 import Usears from "./Usears";
 import {
   Logo,
@@ -15,7 +15,6 @@ export default function Middlenav() {
   const handleClick = () => {
     setCheck(!check);
   };
-  // console.log(cart.length)
   return (
     <div className="nav">
       <div className="container">

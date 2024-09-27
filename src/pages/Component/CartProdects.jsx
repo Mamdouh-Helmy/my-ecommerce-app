@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from "react";
 import { ArrowRight, Remove } from "../../utils/icons.util";
-import { ProductsContext } from "../../context/ProductsProvider ";
+import { ProductsContext } from "../../context/ProductsProvider";
 
 export default function CartProdects({ cart }) {
   const { setCart } = useContext(ProductsContext);
