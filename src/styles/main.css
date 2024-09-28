@@ -1195,7 +1195,7 @@ a {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.251);
   z-index: 400;
   max-height: 80%;
-  overflow-y: auto;
+  overflow: auto;
   .box-pop {
     background-color: #ffffff;
     padding: 20px;
