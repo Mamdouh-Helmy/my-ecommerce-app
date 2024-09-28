@@ -1185,14 +1185,13 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 80%;
   padding: 10px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-  background-color: #fff;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.251);
   z-index: 400;
   max-height: 80%;
@@ -1388,6 +1387,7 @@ a {
       }
     }
   }
+
 }
 .features {
   .container {
