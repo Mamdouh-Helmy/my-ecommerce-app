@@ -226,15 +226,11 @@ export default function TodayBestDeals() {
         <ProductPopup product={selectedProduct} onClose={closePopup} />
       )}
         </div>
-<<<<<<< HEAD
+
         
       </div>
       
     </>
-=======
-        {selectedProduct && <ProductPopup product={selectedProduct} onClose={closePopup} />}
-      </div>
-    </div>
->>>>>>> aed04f5908ca869a1259a96e2167b485ef654813
+
   );
 }
