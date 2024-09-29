@@ -436,9 +436,7 @@ a {
             border-radius: 50%;
             cursor: pointer;
             transition: background 0.3s;
-            &.active {
-              background: #adb7bc;
-            }
+            background: #adb7bc;
             &:hover,
             &.active {
               background: #191c1f;
