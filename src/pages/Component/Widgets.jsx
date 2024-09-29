@@ -65,7 +65,7 @@ export default function Widgets() {
               {[...Array(3)].map((_, index) => (
                 <span
                   key={index}
-                  className={`${index == count ? "active" : ""}`}
+                  className={`${index === count ? "popl active" : "popl"}`}
                   onClick={() => handleClickDot(index)}
                 ></span>
               ))}
