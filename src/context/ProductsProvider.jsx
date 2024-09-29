@@ -22,7 +22,6 @@ export const ProductsProvider = ({ children }) => {
     const savedTime = localStorage.getItem("timear");
     return savedTime ? JSON.parse(savedTime) : [];
   });
-  console.log(categories);
 
   const addToCart = (product) => {
     if (!Array.isArray(cart)) {
