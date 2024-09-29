@@ -63,7 +63,9 @@ button {
 a {
   text-decoration: none;
 }
-
+.pad {
+  padding-top: 30px;
+}
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -320,6 +322,9 @@ a {
                     width: 20%;
                     height: 2px;
                     background-color: #77878f;
+                    @media (max-width: 767px) {
+                      width: 10%;
+                    }
                   }
                   &::after {
                     content: "";
@@ -330,6 +335,9 @@ a {
                     width: 20%;
                     height: 2px;
                     background-color: #77878f;
+                    @media (max-width: 767px) {
+                      width: 10%;
+                    }
                   }
                 }
                 .btn-create {
@@ -408,7 +416,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0;
   .container {
     .content-box {
       display: flex;
@@ -947,6 +954,9 @@ a {
       .acountes {
         margin: 20px 0 10px;
         font-size: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         .box {
           display: flex;
           align-items: center;
@@ -1473,7 +1483,6 @@ a {
   }
 }
 .today-best-deals {
-  padding: 60px 0;
   .container {
     .content {
       display: flex;
@@ -1727,6 +1736,139 @@ a {
                 }
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  .container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+    .box {
+      padding: 40px 25px;
+      border-radius: 5px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      width: 50%;
+      display: flex;
+      align-items: center;
+      @media (max-width: 992px) {
+        width: 100%;
+      }
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+      &:first-child {
+        background-color: #f2f4f5;
+      }
+      &:last-child {
+        background-color: #191c1f;
+      }
+      .text {
+        span {
+          padding: 5px 10px;
+          display: block;
+          border-radius: 2px;
+          -webkit-border-radius: 2px;
+          -moz-border-radius: 2px;
+          -ms-border-radius: 2px;
+          -o-border-radius: 2px;
+          width: fit-content;
+          font-size: 14px;
+          &.two {
+            background-color: #2da5f3;
+            color: #ffffff;
+          }
+          &.one {
+            background-color: #efd33d;
+            color: #191c1f;
+          }
+        }
+        h3 {
+          font-size: 22px;
+          font-weight: 600;
+          margin: 10px 0;
+          &.two {
+            color: #191c1f;
+          }
+          &.one {
+            color: #ffffff;
+          }
+        }
+        p {
+          font-size: 16px;
+          &.two {
+            color: #475156;
+          }
+          &.one {
+            color: #475156;
+          }
+        }
+      }
+      .iamges {
+        img {
+          width: 200px;
+        }
+      }
+    }
+  }
+}
+.banner-home {
+  .container {
+    .box {
+      background-color: #ffe7d6;
+      padding: 40px;
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      display: flex;
+      align-items: center;
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
+      .text {
+        span {
+          background-color: #2da5f3;
+          padding: 8px 10px;
+          font-size: 12px;
+          color: #ffffff;
+          display: block;
+          border-radius: 2px;
+          -webkit-border-radius: 2px;
+          -moz-border-radius: 2px;
+          -ms-border-radius: 2px;
+          -o-border-radius: 2px;
+          width: fit-content;
+        }
+        h3 {
+          margin: 20px 0 10px;
+          color: #191c1f;
+        }
+        p {
+          margin: 20px 0 30px;
+          color: #191c1f;
+          font-size: 16px;
+        }
+      }
+      .images {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        img {
+          max-width: 100%;
+          @media (max-width: 767px) {
+            width: 200px;
           }
         }
       }

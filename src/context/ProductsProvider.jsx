@@ -7,7 +7,10 @@ export const ProductsProvider = ({ children }) => {
   const [categorieProdects, setCategoriesProdects] = useState([]);
   const [categories, setCategories] = useState([]);
   const [categoriesLaptop, setCategoriesLaptop] = useState([]);
-  const [categoriesMobileAccessories, setCategoriesMobileAccessories] = useState([]);
+  const [categoriesMobileAccessories, setCategoriesMobileAccessories] =
+    useState([]);
+  const [categoriesWatches, setCategoriesWatches] = useState([]);
+  const [categoriesTablets, setCategoriesTablets] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,14 +18,15 @@ export const ProductsProvider = ({ children }) => {
   const [hoveredIcons, setHoveredIcons] = useState({});
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
-  const [timear , setTimer] = useState(() => {
+  const [timear, setTimer] = useState(() => {
     const savedTime = localStorage.getItem("timear");
     return savedTime ? JSON.parse(savedTime) : [];
   });
+  console.log(categories);
 
   const addToCart = (product) => {
     if (!Array.isArray(cart)) {
-      setCart([product]); 
+      setCart([product]);
     } else {
       const isProductInCart = cart.find((item) => item.id === product.id);
       if (!isProductInCart) {
@@ -32,7 +36,7 @@ export const ProductsProvider = ({ children }) => {
       }
     }
   };
-  
+
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((response) => response.json())
@@ -44,14 +48,24 @@ export const ProductsProvider = ({ children }) => {
       .then((data) => setCategories(data))
       .catch((error) => console.error("Error:", error));
 
-      fetch("https://dummyjson.com/products/category/laptops")
+    fetch("https://dummyjson.com/products/category/laptops")
       .then((response) => response.json())
       .then((data) => setCategoriesLaptop(data))
       .catch((error) => console.error("Error:", error));
 
-      fetch("https://dummyjson.com/products/category/mobile-accessories")
+    fetch("https://dummyjson.com/products/category/mobile-accessories")
       .then((response) => response.json())
       .then((data) => setCategoriesMobileAccessories(data))
+      .catch((error) => console.error("Error:", error));
+
+    fetch("https://dummyjson.com/products/category/mens-watches")
+      .then((response) => response.json())
+      .then((data) => setCategoriesWatches(data))
+      .catch((error) => console.error("Error:", error));
+
+    fetch("https://dummyjson.com/products/category/tablets")
+      .then((response) => response.json())
+      .then((data) => setCategoriesTablets(data))
       .catch((error) => console.error("Error:", error));
   }, []);
 
@@ -63,14 +77,14 @@ export const ProductsProvider = ({ children }) => {
         if (Array.isArray(parsedCart)) {
           setCart(parsedCart);
         } else {
-          setCart([]); 
+          setCart([]);
         }
       } catch (error) {
         console.error("Error parsing cart from localStorage:", error);
-        setCart([]); 
+        setCart([]);
       }
     } else {
-      setCart([]); 
+      setCart([]);
     }
   }, []);
 
@@ -98,10 +112,10 @@ export const ProductsProvider = ({ children }) => {
       setLoading(false);
     }
   }, [DataUrl, products]);
-  
+
   useEffect(() => {
     localStorage.setItem("timear", JSON.stringify(timear));
-  }, [timear])
+  }, [timear]);
 
   return (
     <ProductsContext.Provider
@@ -128,6 +142,8 @@ export const ProductsProvider = ({ children }) => {
         timear,
         setCategoriesMobileAccessories,
         categoriesMobileAccessories,
+        categoriesWatches,
+        categoriesTablets,
       }}
     >
       {children}
