@@ -629,7 +629,7 @@ a {
   overflow-y: scroll;
   top: 60px;
   @media (max-width: 767px) {
-    top: 20px;
+    top: 100px;
   }
   ul {
     li {
@@ -656,7 +656,7 @@ a {
   box-shadow: 0 0 0 1px #ffffff;
   @media (max-width: 768px) {
     left: 110px;
-    top: 40px;
+    top: 100px;
   }
   ul {
     li {
