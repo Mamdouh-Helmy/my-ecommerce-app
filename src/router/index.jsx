@@ -1,13 +1,15 @@
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import Homepage  from "../pages/Homepage/Homepage";
+import Homepage from "../pages/Homepage/Homepage";
 import Prodects from "../pages/Prodects/Prodects";
 import Login from "../pages/Login/Login";
 import Cart from "../pages/Cart/Cart";
+import ErrorPage from "../pages/ErrorPage/ErrorPage"; // استيراد صفحة الخطأ
 
 const router = createHashRouter([
   {
     path: "/",
     element: <Homepage />,
+    
   },
   {
     path: "/prodets",
@@ -20,6 +22,10 @@ const router = createHashRouter([
   {
     path: "/cart",
     element: <Cart />,
+  },
+  {
+    path: "*", 
+    element: <ErrorPage />,
   },
 ]);
 

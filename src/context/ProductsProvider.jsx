@@ -25,8 +25,6 @@ export const ProductsProvider = ({ children }) => {
     return savedTime ? JSON.parse(savedTime) : [];
   });
 
-  console.log(categories);
-
   const addToCart = (product) => {
     if (!Array.isArray(cart)) {
       setCart([product]);

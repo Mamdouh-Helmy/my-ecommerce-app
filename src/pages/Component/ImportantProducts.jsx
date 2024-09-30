@@ -10,7 +10,6 @@ export default function ImportantProducts() {
     setSelectedProduct,
     selectedProduct,
   } = useContext(ProductsContext);
-  console.log(categoriesTops);
 
   const openPopup = (product) => {
     setSelectedProduct(product);
