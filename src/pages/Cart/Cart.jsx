@@ -4,6 +4,7 @@ import Topnave from "../Component/Topnave";
 import Middlenav from "../Component/Middlenav";
 import Bottomnav from "../Component/Bottomnav";
 import CartProdects from "../Component/CartProdects";
+import Footer from "../Component/Footer";
 
 export default function Cart() {
     const { cart } = useContext(ProductsContext);
@@ -13,6 +14,7 @@ export default function Cart() {
       <Middlenav/>
       <Bottomnav/>
       <CartProdects cart={cart} />
+      <Footer/>
     </>
   )
 }

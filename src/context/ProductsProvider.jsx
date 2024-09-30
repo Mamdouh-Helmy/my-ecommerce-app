@@ -11,6 +11,8 @@ export const ProductsProvider = ({ children }) => {
     useState([]);
   const [categoriesWatches, setCategoriesWatches] = useState([]);
   const [categoriesTablets, setCategoriesTablets] = useState([]);
+  const [categoriesTops, setCategoriesTops] = useState([]);
+  const [categoriesWomensBags, setCategoriesWomensBags] = useState([]);
   const [categoriesData, setCategoriesData] = useState([]);
   const [cart, setCart] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,6 +24,8 @@ export const ProductsProvider = ({ children }) => {
     const savedTime = localStorage.getItem("timear");
     return savedTime ? JSON.parse(savedTime) : [];
   });
+
+  console.log(categories);
 
   const addToCart = (product) => {
     if (!Array.isArray(cart)) {
@@ -65,6 +69,16 @@ export const ProductsProvider = ({ children }) => {
     fetch("https://dummyjson.com/products/category/tablets")
       .then((response) => response.json())
       .then((data) => setCategoriesTablets(data))
+      .catch((error) => console.error("Error:", error));
+
+    fetch("https://dummyjson.com/products/category/tops")
+      .then((response) => response.json())
+      .then((data) => setCategoriesTops(data))
+      .catch((error) => console.error("Error:", error));
+
+    fetch("https://dummyjson.com/products/category/womens-bags")
+      .then((response) => response.json())
+      .then((data) => setCategoriesWomensBags(data))
       .catch((error) => console.error("Error:", error));
   }, []);
 
@@ -143,6 +157,8 @@ export const ProductsProvider = ({ children }) => {
         categoriesMobileAccessories,
         categoriesWatches,
         categoriesTablets,
+        categoriesTops,
+        categoriesWomensBags,
       }}
     >
       {children}

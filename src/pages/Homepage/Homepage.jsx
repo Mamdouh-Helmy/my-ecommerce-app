@@ -7,6 +7,9 @@ import TodayBestDeals from "../Component/TodayBestDeals";
 import Banner from "../Component/Banner";
 import Padding from "../Component/Padding";
 import BannerHome from "../Component/BannerHome";
+import ImportantProducts from "../Component/ImportantProducts";
+import Newsletter from "../Component/Newsletter";
+import Footer from "../Component/Footer";
 export default function Homepage() {
   return (
     <>
@@ -24,6 +27,10 @@ export default function Homepage() {
       <Padding/>
       <BannerHome/>
       <Padding/>
+      <ImportantProducts/>
+      <Padding/>
+      <Newsletter/>
+      <Footer/>
     </>
   );
 }
